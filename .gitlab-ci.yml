@@ -92,9 +92,9 @@ deploy:
         - kubectl config get-contexts
         - kubectl config use-context kimata/dump1090-fa:pod-rollout
 
-        - kubectl -n hems set image deployment/dump1090-fa dump1090-fa=${IMAGE}
+        - kubectl -n sensor set image deployment/dump1090-fa dump1090-fa=${IMAGE}
 
-        - kubectl -n hems rollout status deployment/dump1090-fa --timeout=300s
+        - kubectl -n sensor rollout status deployment/dump1090-fa --timeout=300s
 
         - 'echo "✓ All deployments updated successfully to $TAG"'
 
