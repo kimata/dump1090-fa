@@ -27,6 +27,14 @@ RUN --mount=type=cache,target=/var/lib/apt,sharing=locked \
     libncurses6 \
     nginx
 
+ENV TZ=Asia/Tokyo \
+    LANG=ja_JP.UTF-8 \
+    LANGUAGE=ja_JP:ja \
+    LC_ALL=ja_JP.UTF-8
+
+RUN locale-gen en_US.UTF-8
+RUN locale-gen ja_JP.UTF-8
+
 COPY --from=builder dump1090 /opt/dump1090
 
 COPY nginx.conf /opt/dump1090
