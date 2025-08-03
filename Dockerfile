@@ -23,6 +23,7 @@ FROM ubuntu:24.04
 RUN --mount=type=cache,target=/var/lib/apt,sharing=locked \
     --mount=type=cache,target=/var/cache/apt,sharing=locked \
     apt-get update && apt-get install --no-install-recommends --assume-yes \
+    language-pack-ja \
     librtlsdr2 \
     libncurses6 \
     nginx
