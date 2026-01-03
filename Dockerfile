@@ -39,7 +39,7 @@ RUN locale-gen ja_JP.UTF-8
 
 COPY --from=builder dump1090 /opt/dump1090
 
-COPY nginx.conf /opt/dump1090
+COPY conf/nginx.conf /opt/dump1090
 COPY entrypoint.sh /opt/dump1090
 
 RUN echo '{"type": "dump1090-fa"}' > /opt/dump1090/public_html/status.json
